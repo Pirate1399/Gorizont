@@ -1,0 +1,175 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="drawer">
+            <div class="col-md-12 size-img back-img-single">
+                <div class="effect-cover">
+                    <h3 class="txt-advert animated">Начинай свой путь</h3>
+                    <p class="txt-advert-sub">Только с лучшей экипировкой</p>
+                </div>
+           </div>
+    
+    <section id="single-match-pl" class="container secondary-page">
+      <div class="general general-results players">   
+           <div class="top-score-title right-score col-md-9">
+                <div class="top-score-title player-vs">
+
+                        <div class="main">
+                            <div class="tabs standard">
+                                <div class="tab-content">
+                                 <div class="effect-color"></div>
+                                </div>
+                            </div>
+                            <div class="tabs standard single-pl">
+                                <div class="tab-content single-match">
+                                    <div id="tab1" class="tab active">
+                                       <h3 class="tab-match-title">Cписок снаряжения</h3>
+                                        <div class="tabs standard">
+                                            <ul class="tab-links-match">
+                                                <li class="active"><a class="first-tabs" href="#tab1a">Все снаряжение</a></li>
+                                                <li><a href="#tab2a">Спальники/палатки</a></li>
+                                                <li><a href="#tab3a">снаряжение</a></li>
+                                                <li><a href="#tab4a">Прочее</a></li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div id="tab1a" class="tab active">
+                                                   <div class="col-md-4 single-match-data">
+                                                      <p class="nm-player">Наименование</p>
+                                                       {% for i in all %}
+                                                       <a href="{% url 'services:snaraga' i.id %}"> <p title="{{i.description}}" >{{i.name}}</p></a>
+                                                       {% endfor %}
+                                                   </div>
+
+                                                   <div class="col-md-4 single-match-data">
+                                                     <p class="nm-player">Цена за  1 сутки (руб.)</p>
+                                                       {% for i in all %}
+                                                       <p>{{i.price1}}</p>
+                                                       {% endfor %}
+                                                   </div>
+
+                                                   <div class="col-md-4 single-match-data">
+                                                     <p class="nm-player">Цена от 3 суток (руб.)</p>
+                                                       {% for i in all %}
+                                                       <p>{{i.price2}}</p>
+                                                       {% endfor %}
+                                                   </div>
+                                                </div>
+                                                <div id="tab2a" class="tab">
+                                                    <div class="col-md-4 single-match-data">
+                                                      <p class="nm-player">Наименование</p>
+                                                       {% for i in spal %}
+                                                        <a href="{% url 'services:snaraga' i.id %}"> <p title="{{i.description}}" >{{i.name}}</p></a>
+                                                       {% endfor %}
+
+                                                   </div>
+                                                   <div class="col-md-4 single-match-data">
+                                                     <p class="nm-player">Цена за  1 сутки (руб.)</p>
+                                                       {% for i in spal %}
+                                                       <p>{{i.price1}}</p>
+                                                       {% endfor %}
+                                                   </div>
+                                                   <div class="col-md-4 single-match-data">
+                                                     <p class="nm-player">Цена от 3 суток (руб.)</p>
+                                                       {% for i in spal %}
+                                                       <p>{{i.price2}}</p>
+                                                       {% endfor %}
+                                                   </div>
+                                                </div>
+                                                <div id="tab3a" class="tab">
+                                                    <div class="col-md-4 single-match-data">
+                                                      <p class="nm-player">Наименование</p>
+                                                       {% for i in snar %}
+                                                        <a href="{% url 'services:snaraga' i.id %}"> <p title="{{i.description}}" >{{i.name}}</p></a>
+                                                       {% endfor %}
+
+                                                   </div>
+                                                   <div class="col-md-4 single-match-data">
+                                                     <p class="nm-player">Цена за  1 сутки (руб.)</p>
+                                                       {% for i in snar %}
+                                                       <p>{{i.price1}}</p>
+                                                       {% endfor %}
+                                                   </div>
+                                                   <div class="col-md-4 single-match-data">
+                                                     <p class="nm-player">Цена от 3 суток (руб.)</p>
+                                                       {% for i in snar %}
+                                                       <p>{{i.price2}}</p>
+                                                       {% endfor %}
+                                                   </div>
+                                                </div>
+                                                <div id="tab4a" class="tab">
+                                                    <div class="col-md-4 single-match-data">
+                                                      <p class="nm-player">Наименование</p>
+                                                       {% for i in pro %}
+                                                        <a href="{% url 'services:snaraga' i.id %}"> <p title="{{i.description}}" >{{i.name}}</p></a>
+                                                       {% endfor %}
+
+                                                   </div>
+                                                   <div class="col-md-4 single-match-data">
+                                                     <p class="nm-player">Цена за  1 сутки (руб.)</p>
+                                                       {% for i in pro %}
+                                                       <p>{{i.price1}}</p>
+                                                       {% endfor %}
+                                                   </div>
+                                                   <div class="col-md-4 single-match-data">
+                                                     <p class="nm-player">Цена от 3 суток (руб.)</p>
+                                                       {% for i in pro %}
+                                                       <p>{{i.price2}}</p>
+                                                       {% endfor %}
+                                                   </div>
+                                                </div>
+                                            </div>
+                                 
+                                        </div>     
+                                    </div>
+
+                                </div>
+                                 
+                            </div>
+                            </div> 
+                   </div>
+           </div><!--Close Top Match-->
+           <div class="col-md-3 right-column">
+           <div class="top-score-title col-md-12 right-title">
+                <h3>Полезные статьи:</h3>
+                <div class="right-content">
+                    <p class="news-title-right">Трудности в походе</p>
+                    <p class="txt-right">Собираясь в поход, нужно трезво оценивать свои силы и возможности. Данная статья будет полезна начинающему туристу</p>
+                    <a href="https://videouroki.net/video/02-obektivnye-trudnosti-turistskogo-pohoda.html" class="ca-more" target="_blank"><i class="fa fa-angle-double-right"></i>Читать...</a>
+                </div>
+                <div class="right-content">
+                    <p class="news-title-right">Содержимое походной аптечки</p>
+                    <p class="txt-right">Правильно собрать аптечку - это обязательная задача перед любым походом.</p>
+                    <a href="https://gorzdrav.org/blog/pokhodnaja-aptechka-chto-dolzhno-byt-vnutri/" target="_blank" class="ca-more"><i class="fa fa-angle-double-right"></i>Читать...</a>
+                </div>
+                <div class="right-content">
+                    <p class="news-title-right">Кодекс туриста</p>
+                    <p class="txt-right">В этой статье собраны несколько простых правил из Кодекса Туриста</p>
+                    <a href="https://crimea-extrim.ru/kodeks-turista/" class="ca-more" target="_blank"><i class="fa fa-angle-double-right"></i>Читать...</a>
+                </div>
+          </div>
+
+        </section>
+
+        
+{% endblock %}
+ <div id="tab3a" class="tab">
+     <div class="col-md-4 single-match-data">
+         <p class="nm-player">Наименование</p>
+         {% for i in snar %}
+         <p title="{{i.description}}" >{{i.name}}</p>
+         {% endfor %}
+     </div>
+     <div class="col-md-4 single-match-data">
+         <p class="nm-player">Цена за  1 сутки (руб.)</p>
+         {% for i in spal %}
+         <p>{{i.price1}}</p>
+         {% endfor %}
+     </div>
+     <div class="col-md-4 single-match-data">
+         <p class="nm-player">Цена от 3 суток (руб.)</p>
+         {% for i in spal %}
+         <p>{{i.price2}}</p>
+         {% endfor %}
+     </div>
+ </div>

@@ -1,0 +1,69 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+
+ </section>
+   <section class="drawer">
+    <div class="col-md-12 size-img back-img-shop">
+        <div class="effect-cover">
+            <h3 class="txt-advert animated">Наш мерч</h3>
+            <p class="txt-advert-sub">Сделан качественно и с любовью</p>
+        </div>
+    </div>
+
+    <section id="shop" class="container secondary-page">
+      <div class="general general-results">
+           <div class="top-score-title right-score col-md-9">
+                <h3>Наш <span>бренд</span><span class="point-little"></span></h3>
+                <div class="col-md-12 shops shops-top">
+                    {% for product in products %}
+                    <div class="col-md-4 shop-prod">
+                     <img src="{{product.title_foto.url}}" width="160" height="160" alt="" />
+                        <div class="title-prod"><a href="{% url 'shop:product' product.id %}" >{{product.name}}</a></div>
+                        <div class="prod-buy"><a href="{% url 'shop:product' product.id %}" class="prod-cart"><i></i>Подробнее...</a><p class="prod-sh-price">{{product.price}} Руб.</p></div>
+                    </div>
+                    {% endfor %}
+                </div>
+           </div><!--Close Top Match-->
+          <div class="col-md-3 right-column">
+           <div class="top-score-title prod-cat col-md-12">
+                <h3>Каталог</h3>
+                <div class="products-content">
+                    <a href="{% url 'shop:shop' %}" class="news-title-right">Все товары</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'shop:product_sort' 'ts' %}" class="news-title-right">Футболки</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'shop:product_sort' 'sh' %}" class="news-title-right">Шевроны</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'shop:product_sort' 't' %}" class="news-title-right">Толстовки</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'shop:product_sort' 'ot' %}" class="news-title-right">Остальное</a>
+                </div>
+          </div>
+           <div class="top-score-title col-md-12 right-title">
+                <h3>Полезные статьи:</h3>
+                <div class="right-content">
+                    <p class="news-title-right">Трудности в походе</p>
+                    <p class="txt-right">Собираясь в поход, нужно трезво оценивать свои силы и возможности. Данная статья будет полезна начинающему туристу</p>
+                    <a href="https://videouroki.net/video/02-obektivnye-trudnosti-turistskogo-pohoda.html" class="ca-more" target="_blank"><i class="fa fa-angle-double-right"></i>Читать...</a>
+                </div>
+                <div class="right-content">
+                    <p class="news-title-right">Содержимое походной аптечки</p>
+                    <p class="txt-right">Правильно собрать аптечку - это обязательная задача перед любым походом.</p>
+                    <a href="https://gorzdrav.org/blog/pokhodnaja-aptechka-chto-dolzhno-byt-vnutri/" target="_blank" class="ca-more"><i class="fa fa-angle-double-right"></i>Читать...</a>
+                </div>
+                <div class="right-content">
+                    <p class="news-title-right">Кодекс туриста</p>
+                    <p class="txt-right">В этой статье собраны несколько простых правил из Кодекса Туриста</p>
+                    <a href="https://crimea-extrim.ru/kodeks-turista/" class="ca-more" target="_blank"><i class="fa fa-angle-double-right"></i>Читать...</a>
+                </div>
+          </div>
+          </div>
+        </section>
+{% endblock %}

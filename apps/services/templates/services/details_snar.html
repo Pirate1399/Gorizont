@@ -1,0 +1,42 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+   <section class="drawer">
+            <div class="col-md-12 size-img back-img-shop">
+              <div class="effect-cover">
+                    <h3 class="txt-advert animated">Профессиональное снаряжение</h3>
+                    <p class="txt-advert-sub">В горы только лучшее!</p>
+                </div>
+           </div>
+
+    <section id="shop" class="container secondary-page">
+      <div class="general general-results">
+
+           <div class="top-score-title col-md-9">
+                <h3>Подробное <span>Описание</span><span class="point-little">.</span></h3>
+                <div class="col-md-12 content-zoom">
+                            <div id="slider" class="flexslider flexslider-attachments">
+                                <ul class="slides">
+                                    <li data-thumb="{% static 'images/slider/mini-slider/thumb1.jpg' %}"><img src="{{value.foto.url}}"
+                                                                                                               height="500" alt=""/></li>
+                                </ul>
+                            </div>
+                </div>
+               <div class="col-md-12 content-zoom">
+                  <div class="col-md-6 content-desc-zoom">
+					<h3>{{value.name}}</h3>
+                    <p class="desc-prod">{{value.description}}</p>
+                    <p class="desc-price">{{value.price1}} рублей/сутки</p>
+				  </div>
+               </div>
+          <br>
+           </div><!--Close Top Match-->
+          <div class="col-md-3 right-column">
+
+         </div>
+         </section>
+         <br>
+
+{% endblock %}

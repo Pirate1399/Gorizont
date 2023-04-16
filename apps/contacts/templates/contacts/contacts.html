@@ -1,0 +1,69 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!--          <div class="col-md-6 d-flex">-->
+<!--          	<div id="map" class="bg-white"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+
+<!--    <footer class="ftco-footer ftco-section">-->
+<!--      <div class="container">-->
+<!--      	<div class="row">-->
+<!--      		<div class="mouse">-->
+<!--						<a href="#" class="mouse-icon">-->
+<!--							<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>-->
+<!--						</a>-->
+<!--					</div>-->
+<!--      	</div>-->
+    <section class="drawer">
+    <section id="contact" class="secondary-page">
+      <div class="general">
+           <!--Google Maps-->
+<!--            <div id="map_container">-->
+<!--			    <div id="map_canvas"></div>-->
+<!--		    </div>-->
+<!--          <div class="container">-->
+           <div class="content-link col-md-12">
+                  <div id="contact_form" class="top-score-title col-md-9 align-center">
+                    <h3>Форма <span>для связи с нами</span></h3>
+                                <form method="post" action="#">
+                                    {% csrf_token %}
+                                    <div class="name">
+                                        <label for="name">* Имя:</label><div class="clear"></div>
+                                        <input id="name" name="name" type="text" placeholder="Иван Иванов" required=""/>
+                                    </div>
+                                    <div class="email">
+                                        <label for="email">* Email:</label><div class="clear"></div>
+                                        <input id="email" name="email" type="text" placeholder="example@domain.com" required=""/>
+                                    </div>
+                                    <div class="message">
+                                        <label for="message"> Сообщение:</label>
+                                        <textarea name="messagetext" class="txt-area" id="message" cols="30" rows="4" placeholder="Эта форма пока не работает, но я что-нибудь придумаю"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="submit" value="Отправить сообщение" class="btn btn-primary py-3 px-5">
+                                    </div>
+                                    <p class="success">Ваше сообщение доставлено, мы скоро Вам ответим!</p>
+                                    <p class="error">Что-то пошло не так... Проверьте данные</p>
+                                  </form>
+                              </div>
+                     <div id="info-company" class="top-score-title col-md-3 align-center">
+                        <h3>Информация</h3>
+                        <div class="col-md-12">
+                          <p><i class="fa fa-phone"></i>+7(3952)72-48-07</p>
+                          <p><i class="fa fa-envelope-o"></i>gorizont-tour@yandex.ru</p>
+                          <p><i class="fa fa-globe"></i>Улица Горького дом 6</p>
+                          <p><i class="fa fa-map-marker"></i>Иркутск, Российская Федерация</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </section>
+{% endblock %}

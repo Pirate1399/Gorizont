@@ -1,0 +1,82 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+   <section class="drawer">
+            <div class="col-md-12 size-img back-img-sertificate">
+              <div class="effect-cover">
+                    <h3 class="txt-advert animated">Сертификаты</h3>
+                    <p class="txt-advert-sub">Подари горы близким</p>
+                </div>
+           </div>
+
+    <section id="shop" class="container secondary-page">
+      <div class="general general-results">
+
+           <div class="top-score-title col-md-9">
+                <h3>О сертификатах:</h3>
+               <div class="col-md-12 content-zoom" >
+                  <div>
+                    <p class="desc-prod">Вы можете купить сертификат на поход в горы. Можно выбрать один из существующих вариантов
+                    или предложить свой, на свою сумму. Мы сделаем именной сертификат специально для Вас.</p>
+                      <br>
+				  </div>
+               </div>
+<br>
+               <div class="col-md-4">
+                     <img src="{% static 'images/services/sertif.jpg' %}" alt=""/>
+                     <div class="slide-news-bottom"><a>На один поход</a></div>
+                     <p>Сертификат на одну персону на любой тур из нашего каталога. Стоимость сертификата равна стоимости тура</p>
+               </div>
+               <div class="col-md-4">
+                     <img src="{% static 'images/services/sertif.jpg' %}" alt=""/>
+                     <div class="slide-news-bottom"><a>На двоих</a></div>
+                     <p>Сертификат на двоих. то же самое, добавить описание....</p>
+               </div>
+               <div class="col-md-4">
+                     <img src="{% static 'images/services/sertif.jpg' %}" alt=""/>
+                     <div class="slide-news-bottom"><a>Эксклюзивный тур</a></div>
+                     <p>Что-то очень экслюзивное</p>
+               </div>
+
+
+
+                <div class="col-md-12 content-more-det">
+                  <h3>Правила использования сертификатов:</h3>
+                  <div class="bulleted_list" align="left">
+                    <ul>
+	                    <li>В стоимость сертификата входит прокат снаряжения, питание, трасфер...</li>
+                        <li>Сертификат может быть....</li>
+                        <li>Возврат сертификатов может быть осуществлен только в срок.... и
+                       с удержанием 10% от суммы.....</li>
+                        <li>При заказе именного сертификата + 200 рублей к стоимости сертификата</li>
+                    </ul>
+                    </div>
+                </div>
+           </div><!--Close Top Match-->
+          <div class="col-md-3 right-column">
+           <div class="top-score-title prod-cat col-md-12">
+                <h3>Наши услуги</h3>
+                <div class="products-content">
+                    <a href="{% url 'services:prokat' %}" class="news-title-right">Прокат снаряжения</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'services:transfer' %}" class="news-title-right">Трансфер</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'services:podbor'  %}" class="news-title-right">Подбор Снаряжения</a>
+                </div>
+               <div class="products-content">
+                    <a href="{% url 'services:hostel' %}" class="news-title-right">Хостел</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'services:sertificate' %}" class="news-title-right">Сертификаты</a>
+                </div>
+          </div>
+
+         </div>
+         </section>
+         <br>
+
+{% endblock %}

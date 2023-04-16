@@ -1,0 +1,52 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="drawer">
+    <div class="col-md-12 size-img back-img-progor">
+        <div class="effect-cover">
+            <h3 class="txt-advert animated">Proгорики</h3>
+            <p class="txt-advert-sub animated">Горы доступны каждому</p>
+        </div>
+    </div>
+    <h1 align="center" class="point-little">Кто такие прогорики?</h1>
+    <p class="textprogor">Pro_goriki - Это проект созданый для бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла
+        бла бла бла бла бла бла бла бла бла 🤷🏼‍♀, бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла
+        бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла
+        бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла
+        бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла
+        бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла
+        бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла 🥰</p>
+
+    <section id="news" class="container secondary-page">
+        <nav class="general general-results players">
+            <div class="top-score-title right-score col-md-12">
+                <h3>Подходят <span>для детей:</span></h3>
+                {% for tour in tours %}
+                <div class="col-md-12 news-page">
+                    <img class="img-djoko" src="{{tour.title_foto.url}}"width="270" height="180" alt="" />
+
+                    <div class="col-md-10 data-news-pg">
+                        <p class="news-dd">Сложность: {{tour.level}} {%if tour.pro_gor%}<a href="#" title="Можно с детьми" ><i class="fa fa-picture-o"></i></a>{% endif %}</p>
+                        <a href="{% url 'tours:show_tour' tour.name %}"><h3>{{tour.name}}</h3></a>
+                        <p>{{tour.description}}</p>
+                        <div class="col-md-12 news-more"><a href="{% url 'tours:show_tour' tour.name %}" class="ca-more"><i
+                                class="fa fa-angle-double-right"></i>Подробнее...</a></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div><!--Close Top Match-->
+            {% if tours.has_other_pages %}
+            <nav class="col-md-12 news-page-page">
+                {% for p in paginator.page_range %}
+                {% if tours.number == p %}
+                  <span class="news-page-active">{{ p }}</span>
+                {% else %}
+                <a href="?page={{ p }}"> <span>{{ p }}</span></a>
+                {% endif %}
+                {% endfor %}
+            </nav>
+            {% endif %}
+        </div>
+    </section>
+    {% endblock %}

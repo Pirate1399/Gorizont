@@ -1,0 +1,82 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+   <section class="drawer">
+            <div class="col-md-12 size-img back-img-hostel">
+              <div class="effect-cover">
+                    <h3 class="txt-advert animated">Хостел ШИКША</h3>
+                    <p class="txt-advert-sub">Отдыхай душой</p>
+                </div>
+           </div>
+
+    <section id="shop" class="container secondary-page">
+      <div class="general general-results">
+
+           <div class="top-score-title col-md-9">
+                <h3>О Хостеле</h3>
+               <div class="col-md-12 content-zoom" >
+                  <div>
+                    <p class="desc-prod">Отдохни с дороги, путник. Здесь ты это можешь сделать, у нас есть кровать.
+                    даже парочка кроватей. Короче, если ты не из Иркутска, то давай сюда, тут прикольно и Таня. а еще можно помыться.
+                    у нас есть варианты размещения типа разные, семейный номер там, мочалку свою несите только. Удобное расположение и ваще.
+                    А, еще шкафчики есть, можете хранить вещи какие-то. Или не заселяясь, использовать как камеру храниения их.
+                    Что еще? Ну короче, ребята придумайте сюда все что хотите.</p>
+				  </div>
+               </div>
+                <div class="col-md-12 content-zoom">
+                            <div id="slider" class="flexslider flexslider-attachments">
+                                <ul class="slides">
+                                    <li data-thumb="{% static 'images/slider/mini-slider/thumb1.jpg' %}"><img src="{% static  'images/services/hostel/1.jpg' %}" alt="" width="1024" height="570"/></li>
+                                    <li data-thumb="{% static 'images/slider/mini-slider/thumb1.jpg' %}"><img src="{% static  'images/services/hostel/2.jpg' %}" alt="" width="1024" height="570"/></li>
+                                    <li data-thumb="{% static 'images/slider/mini-slider/thumb1.jpg' %}"><img src="{% static  'images/services/hostel/3.jpg' %}" alt="" width="1024" height="570"/></li>
+                                    <li data-thumb="{% static 'images/slider/mini-slider/thumb1.jpg' %}"><img src="{% static  'images/services/hostel/4.jpg' %}" alt="" width="1024" height="570"/></li>
+                                </ul>
+                            </div>
+                </div>
+               <div class="col-md-12 content-zoom">
+                  <div class="col-md-6 content-desc-zoom">
+					<h3>Информация:</h3>
+                    <p class="desc-prod">Адрес: <a href="https://2gis.ru/irkutsk/firm/70000001025233304/104.278122%2C52.281065?m=104.27797%2C52.28101%2F19.22" target="_blank"> Иркутск, Улица Горького, дом 6</a></p>
+                    <p class="desc-prod">Режим работы: круглосуточно</p>
+                    <p class="desc-prod">Телефон для бронирования: 6464646</p>
+				  </div>
+               </div>
+
+
+                <div class="col-md-12 content-more-det">
+                  <h3>Цены</h3>
+                  <div class="bulleted_list" align="right">
+                    <ul>
+	                    <li>Семейный номер: 1800 </li>
+                        <li>Место в синей комнате:  800</li>
+                    </ul>
+                    </div>
+                </div>
+           </div><!--Close Top Match-->
+          <div class="col-md-3 right-column">
+           <div class="top-score-title prod-cat col-md-12">
+                <h3>Наши услуги</h3>
+                <div class="products-content">
+                    <a href="{% url 'services:prokat' %}" class="news-title-right">Прокат снаряжения</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'services:transfer' %}" class="news-title-right">Трансфер</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'services:podbor'  %}" class="news-title-right">Подбор Снаряжения</a>
+                </div>
+               <div class="products-content">
+                    <a href="{% url 'services:hostel' %}" class="news-title-right">Хостел</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'services:sertificate' %}" class="news-title-right">Сертификаты</a>
+                </div>
+          </div>
+
+         </div>
+         </section>
+         <br>
+
+{% endblock %}

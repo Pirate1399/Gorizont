@@ -1,0 +1,44 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="drawer">
+    <div class="col-md-12 size-img back-img-news2">
+        <div class="effect-cover">
+            <h3 class="txt-advert animated">Познавай мир с нами</h3>
+            <p class="txt-advert-sub animated">города тоже таят в себе много интересного</p>
+        </div>
+    </div>
+
+    <section id="news" class="container secondary-page">
+        <nav class="general general-results players">
+            <div class="top-score-title right-score col-md-12">
+                <h3>Выбирай <span>свой путь</span><span class="point-little">.</span></h3>
+                {% for exursion in excurtions %}
+                <div class="col-md-12 news-page">
+                    <img class="img-djoko" src="{{exursion.foto.url}}"width="270" height="180" alt="" />
+
+                    <div class="col-md-10 data-news-pg">
+                        <p class="news-dd">Стоимость: {{exursion.price}} рублей/чел.</p>
+                        <a href="{% url 'tours:show_exursion' exursion.name %}"><h3>{{exursion.name}}</h3></a>
+                        <p>{{exursion.description}}</p>
+                        <div class="col-md-12 news-more"><a href="{% url 'tours:show_exursion' exursion.name %}" class="ca-more"><i
+                                class="fa fa-angle-double-right"></i>Подробнее...</a></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div><!--Close Top Match-->
+            {% if excurtions.has_other_pages %}
+            <nav class="col-md-12 news-page-page">
+                {% for p in paginator.page_range %}
+                {% if excurtions.number == p %}
+                  <span class="news-page-active">{{ p }}</span>
+                {% else %}
+                <a href="?page={{ p }}"> <span>{{ p }}</span></a>
+                {% endif %}
+                {% endfor %}
+            </nav>
+            {% endif %}
+        </div>
+    </section>
+    {% endblock %}

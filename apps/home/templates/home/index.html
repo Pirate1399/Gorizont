@@ -1,0 +1,477 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+          <!--SECTION CONTAINER SLIDER-->
+    <section id="summary-slider">
+           <div class="general">
+           <div class="content-result content-result-news col-md-12">
+             <div id="textslide" class="effect-backcolor">
+                <div class="container">
+                    <div class="col-md-12 slide-txt">
+                        <p class='sub-result aft-little welcome linetheme-left'>К новым</p>
+                        <p class='sub-result aft-little linetheme-right'>ГОРИЗОНТАМ</p>
+                    </div>
+                </div>
+             </div>
+           </div>
+           <div id="slidematch" class="col-xs-12 col-md-12">
+                  <div class="content-match-team-wrapper">
+                     <span class="gdlr-left">Покори свою вершину</span>
+                  </div>
+                  <a href="{% url 'about_as:about' %}"><div class="content-match-team-time">
+                      <span class="gdlr-left">Водим туры с 2013 года</span></div></a>
+<!--                     <span class="gdlr-right">Real Stadium</span>-->
+                  </div>
+               </div>
+         </div>
+    </section>
+          <!-- SECTION NEWS SLIDER -->
+     <section class="news_slide-over-color">
+          <div class="news_slide-over"></div>
+           <div class="container">
+             <div class="col-xs-12 col-md-12 top-first-info">
+               <div class="col-md-4">
+                     <section class="slider">
+                            <div id="slider" class="flexslider flexslider-attachments">
+                                <ul class="slides">
+                                    {% for picture in shop_pictures %}
+                                    <li data-thumb="{% static 'images/slider/mini-slider/thumb1.jpg' %}"><img src="{{picture}}" width="1024" height="240" alt=""/></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="slide-news-bottom"><a href="{% url 'shop:shop' %}">Наш магазин</a><a class="i-ico" href="{% url 'shop:shop' %}"><i class="fa fa-angle-double-right"></i></a></div>
+                     </section>
+                </div>
+                <div class="col-md-4">
+                     <img src="{{next_tour.title_foto}}" width="1024" height="240" alt=""/>
+                     <div class="slide-news-bottom"><a href="{% url 'tours:show_tour' next_tour.name %}"title="Подробнее о туре">Ближайший тур</a><a class="i-ico" href="{% url 'tours:calendar' %}" title="К календарю"><i class="fa fa-angle-double-right"></i></a></div>
+                </div>
+                <div class="col-md-4">
+                     <img src="{% static 'images/services/sertif.jpg' %}" width="1024" height="240" alt=""/>
+                     <div class="slide-news-bottom"><a href="{% url 'services:sertificate' %}">Подарочный сертификат</a><a class="i-ico" href="{% url 'services:sertificate' %}"><i class="fa fa-angle-double-right"></i></a></div>
+                </div>
+             </div>
+             <div class="col-xs-12 col-md-12 top-slide-info">
+              <div class="col-xs-6 col-md-6">
+                <div class="col-md-4 slide-cont-img"><a href="{% url 'tours:show_tour' p1.0.name %}"><img class="scale_image" width="614" height="110" src="{{ p1.0.title_foto }}" alt=""/>{% if p1.0.pro_gor %}<a href="{% url 'tours:progor' %}"><i class="fa fa-picture-o-black" ></i> </a>{% endif %}</a></div>
+                  <div class="event_date dd-date">Цена: {{ p1.0.price }} р.<div class="post_theme">Exlusive</div></div><a href="{% url 'tours:show_tour' p1.0.name %}"><h4> {{ p1.0.name }}</h4></a>
+                <p title="{{ p1.0.description}}">{{ p1.1}}...</p>
+              </div>
+              <div class="col-xs-6 col-md-6">
+                <div class="col-md-4 slide-cont-img"><a href="{% url 'tours:show_tour' p2.0.name %}"><img class="scale_image" width="614" height="110"  src="{{ p2.0.title_foto }}" alt=""/>{% if p2.0.pro_gor %}<a href="{% url 'tours:progor' %}"><i class="fa fa-picture-o-black" ></i> </a> {% endif %}</a></div>
+                <div class="event_date dd-date">Цена: {{ p2.0.price }} р.<div class="post_theme">Выгодно</div></div><a href="{% url 'tours:show_tour' p2.0.name %}"><h4> {{ p2.0.name }}</h4></a>
+                <p title="{{ p2.0.description}}">{{ p2.1}}...</p>
+
+              </div>
+              <div class="col-xs-6 col-md-6 box-top-txt">
+                <div class="col-md-4 slide-cont-img"><a href="{% url 'tours:show_tour' p3.0.name %}"><img class="scale_image" width="614" height="110" src="{{ p3.0.title_foto }}" alt=""/>{% if p3.0.pro_gor %}<a href="{% url 'tours:progor' %}"><i class="fa fa-picture-o-black" ></i> </a> {% endif %}</a></div>
+                  <div class="event_date dd-date">Цена: {{ p3.0.price }} р.</div><a href="{% url 'tours:show_tour' p3.0.name %}"><h4> {{ p3.0.name }}</h4></a>
+                <p title="{{ p3.0.description}}">{{ p3.1 }}...</p>
+
+              </div>
+              <div class="col-xs-6 col-md-6 box-top-txt">
+                <div class="col-md-4 slide-cont-img"><a href="{% url 'tours:show_tour' p4.0.name %}"><img class="scale_image" width="614" height="110" src="{{ p4.0.title_foto }}" alt=""/>{% if p4.0.pro_gor %}<a href="{% url 'tours:progor' %}"><i class="fa fa-picture-o-black" ></i> </a> {% endif %}</div>
+                  <div class="event_date dd-date">Цена: {{ p4.0.price }} р.</div><a href="{% url 'tours:show_tour' p4.0.name %}"><h4> {{ p4.0.name }}</h4></a>
+                <p title="{{ p4.0.description}}">{{ p4.1 }}...</p>
+
+              </div>
+             </div>
+           </div>
+     </section>
+
+     <section id="parallaxTraining">
+        <div class="black-shad">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="txt-training">
+                  <p>Начни свой путь</p>
+                  <h2>Прямо сейчас</h2>
+                  <a href="{% url 'tours:tour_sort_level' 'Новичок' %}">Я новичок</a><a href="{% url 'tours:tour_sort_level' 'Опытный' %}">Я опытный</a><a href="{% url 'tours:tour_sort_level' 'Эксперт' %}">Я эксперт</a>
+                </div>
+            </div>
+        </div>
+      </div>
+     </section>
+
+
+<!--     <section class="bbtxt-content">-->
+
+<!--           <div class="container">-->
+<!--                    <div class="col-xs-12 bbtxt-box">-->
+<!--                        <h4><i class="fa fa-quote-left"></i>Tennis<span class="point-big">.</span> <span class="middle-txt">is the new black<span class="point-little">.</span></span><i class="fa fa-quote-right"></i></h4>-->
+<!--                        <p class="subin">The best tennis tour around the europe step by step.</p>-->
+<!--                        <div class="col-md-6 homevideo-top">-->
+<!--                             <h3 class="home-video-title">Amazing Video</h3>-->
+<!--                            <div class="col-md-12 homevideo">-->
+<!--                               -->
+<!--                                <div class="col-md-5 it-video">-->
+<!--                                  <a href="video.html"><img class="scale_image" src="http://placehold.it/624x428" alt=""/>-->
+<!--                                  <i class="fa fa-video-camera"></i></a>-->
+<!--                                </div>-->
+<!--                                <div class="video-txt">-->
+<!--                                   <div class="event_date_video">July 01, 2014 5:50 am</div>-->
+<!--                                   <div class="post_theme video-post">Interview</div><h3>Neque porro quisquam</h3>-->
+<!--                                   <p>Aliquam erat volutpat. So your content will always look good on any screen size like<br>-->
+<!--                                        Tablet, Phones, Imac, Macbook &amp; all sort of devices. </p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-12 homevideo">-->
+<!--                                <div class="col-md-5 it-video">-->
+<!--                                  <a href="video.html"><img class="scale_image" src="http://placehold.it/624x428" alt=""/>-->
+<!--                                  <i class="fa fa-video-camera"></i></a>-->
+<!--                                </div>-->
+<!--                                <div class="video-txt">-->
+<!--                                    <div class="event_date_video">July 01, 2014 5:50 am</div>-->
+<!--                                    <h3>Ante ipsum primis</h3>-->
+<!--                                   <p>Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi.</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-12 homevideo">-->
+<!--                                <div class="col-md-5 it-video">-->
+<!--                                  <a href="video.html"><img class="scale_image" src="http://placehold.it/624x428" alt=""/>-->
+<!--                                  <i class="fa fa-video-camera"></i></a>-->
+<!--                                </div>-->
+<!--                                <div class="video-txt">-->
+<!--                                    <div class="event_date_video">July 01, 2014 5:50 am</div>-->
+<!--                                    <h3>Neque porro quisquam</h3>-->
+<!--                                   <p>Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-6 homevideo-top">-->
+<!--                            <h3 class="home-video-title">Amazing Video</h3>-->
+<!--                            <div class="col-md-12 homevideo"> -->
+<!--                                <div class="col-md-5 it-video">-->
+<!--                                  <a href="video.html"><img class="scale_image" src="http://placehold.it/624x428" alt=""/>-->
+<!--                                  <i class="fa fa-video-camera"></i></a>-->
+<!--                                </div>-->
+<!--                                <div class="video-txt">-->
+<!--                                   <div class="event_date_video">July 01, 2014 5:50 am</div>-->
+<!--                                   <div class="post_theme video-post">Interview</div><h3>Neque porro quisquam</h3>-->
+<!--                                   <p>Aliquam erat volutpat. So your content will always look good on any screen size like<br>-->
+<!--                                        Tablet, Phones, Imac, Macbook &amp; all sort of devices. </p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-12 homevideo">-->
+<!--                                <div class="col-md-5 it-video">-->
+<!--                                  <a href="video.html"><img class="scale_image" src="http://placehold.it/624x428" alt=""/>-->
+<!--                                  <i class="fa fa-video-camera"></i></a>-->
+<!--                                </div>-->
+<!--                                <div class="video-txt">-->
+<!--                                    <div class="event_date_video">July 01, 2014 5:50 am</div>-->
+<!--                                    <h3>Ante ipsum primis</h3>-->
+<!--                                   <p>Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi.</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-12 homevideo">-->
+<!--                                <div class="col-md-5 it-video">-->
+<!--                                  <a href="video.html"><img class="scale_image" src="http://placehold.it/624x428" alt=""/>-->
+<!--                                  <i class="fa fa-video-camera"></i></a>-->
+<!--                                </div>-->
+<!--                                <div class="video-txt">-->
+<!--                                    <div class="event_date_video">July 01, 2014 5:50 am</div>-->
+<!--                                    <h3>Neque porro quisquam</h3>-->
+<!--                                   <p>Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--             -->
+<!--     </section>-->
+          <!--SECTION STATISTIC RESULTS-->
+<div><br></div>
+     <section id="parallax-info">
+        <div class="clearfix">
+			    <div class="col-md-6 yoga-desc title">
+                    <h1>Сергей Петров</h1>
+                    <p>Можно долго говорить почему и за что я люблю горы. Скажу лишь, что они очень не любят жадность и эгоцинтризм. И они прекрасны. Большинство
+                    людей и не знают что это такое: преодолевая себя и обстоятельства взскарабкаться на вершину, увидеть красоту и мощь природы, вдохнуть чистый
+                    незнакомый воздух и вдруг ощутить счастье.</p>
+
+                    <p class="txt-break">Когда я основывал "Горизонт", мною двигало одно желание: поделиться этими ощущениями с миром, показать людям чего они могут достичь,
+                    провести к вершинам, при этом комфортно и безопасно. И сегодня каждый сотрудник моей компании следует именно этим принципам. Я рад, что у меня
+                    есть возможность помогать Вам и быть Вашим проводником в удивительный мир горной природы.</p>
+                    <img class="signature" src="{% static 'images/signature.png' %}" alt=""/>
+               </div>
+               <div class="col-md-6 cup-img" style="padding:0;">
+                     <img src="{% static 'images/Serj.jpg' %}" alt=""/>
+               </div>		
+	        </div>
+    </section>
+          <!-- SECTION SUBSCRIPTIONS-->
+     <section class="bbtxt-content-subscription">
+           <div class="container">
+                    <div class="col-xs-12 bbtxt-box">
+                        <h4></i><span class="middle-txt">Подари</span> <span class="point-big">ГОРЫ</span> Друзьям</h4>
+                        <p class="subin">Подарочные сертификаты на наши туры</p>
+                        <div class="subscription-content">
+                            <div class="col-md-4">
+                                <div class="subscription-tennis">
+                                     
+                                     <h3>Сертификат<span> Стандарт</span></h3>
+                                     
+                                     <p class="desc-subscription">Можете выбрать один из наших туров и оплатить его другому человеку чтобы сделать ему хорошо</p>
+                                     <a class="pl-point-button" href="{% url 'services:sertificate' %}">Подробнее</a>
+                                 </div>
+                             </div>
+                             <div class="col-md-4">
+                                <div class="subscription-tennis">
+                                   
+                                  <h3>Сертификат<span> На двоих</span></h3>
+                                  
+                                  <p class="desc-subscription">Романтическое путушествие на двух человек. В программе костер, двухместная палатка</p>
+                                  <a class="pl-point-button" href="{% url 'services:sertificate' %}">Подробнее</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="subscription-tennis">
+                                  
+                                  <h3>Сертификат<span> Эксклюзив</span></h3>
+                                  
+                                  <p class="desc-subscription">Любой каприз за ваши деньги. Интим предлагать. Ещё и доплатим</p>
+                                  <a class="pl-point-button" href="{% url 'services:sertificate' %}">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+     </section>
+            <!--SECTION LAST PHOTO-->
+     <section id="news-section">
+           <div class="container">
+                   <div class="top-match col-xs-12 col-md-12">
+                      <div class="news-content">
+                       <h3 class="news-title">Наши фотографии <span class="point-little">.</span></h3>
+                       <p class="subtitle">Просто несколько фотографий, для того, чтобы поделиться красотой (фотографий может быть сколько угодно)</p>
+                       <div id="container-vert-n">
+                        <dl class="group">
+                            <dt></dt>
+		                    <dd>
+			                    <ul class="filter group albumFilter"> 
+				                    <li data-filter="*" class="current"><a  href="#">Все</a></li>
+				                    <li data-filter=".cat1"><a  href="#">Мунку</a></li>
+				                    <li data-filter=".cat2"><a  href="#">Прогорики</a></li>
+				                    <li data-filter=".cat3"><a  href="#">Казбек</a></li>
+				                    <li data-filter=".cat4"><a  href="#">Эльбрус</a></li>
+                                    <li data-filter=".cat5"><a  href="#">Пик Ленина</a></li>
+			                    </ul> 
+		                    </dd>
+	                    </dl>
+                        <div class="clear"></div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            
+	       <ul class="portfolio group albumContainer">
+		                <li class="item block cat4 col-xs-3">
+			                <a><img src="{% static 'images/gallery/elbrus1.jpg' %}"  alt="" /></a>
+                        </li>
+		                <li class="item block cat4 col-xs-3">
+			                <a><img src="{% static 'images/gallery/elbrus2.jpg' %}"  alt="" /></a>
+                        </li>
+		                <li class="item block cat1 col-xs-3">
+			                <a><img src="{% static 'images/gallery/munku2.jpg' %}"  alt="" /></a>
+                        </li>
+		                <li class="item block cat3 col-xs-3">
+			                <a><img src="{% static 'images/gallery/kazbek1.jpg.jpg' %}"  alt="" /></a>
+                        </li>
+                        <li class="item block cat3 col-xs-3">
+			                <a><img src="{% static 'images/gallery/kazbek2.jpg.jpg' %}"  alt="" /></a>
+                        </li>
+                        <li class="item block cat5 col-xs-3">
+			                <a ><img src="{% static 'images/gallery/lenin1.jpg' %}"  alt="" /></a>
+                        </li>
+                        <li class="item block  cat2 col-xs-3">
+			                <a><img src="{% static 'images/gallery/pro2.jpg' %}"  alt="" /></a>
+                        </li>
+                        <li class="item block cat2 col-xs-3">
+			                <a><img src="{% static 'images/gallery/pro3.jpg' %}"  alt="" /></a>
+                        </li>
+                         <li class="item block cat5 col-xs-3">
+			                <a href="#" ><img src="{% static 'images/gallery/lenin3.jpg' %}"  alt="" /></a>
+                        </li>
+                         <li class="item block cat1 cat4 col-xs-3">
+			                <a><img src="{% static 'images/gallery/elbrus3.jpg' %}"  alt="" /></a>
+                        </li>
+                        <li class="item block cat3 cat4 col-xs-3">
+			                <a href="#" ><img src="{% static 'images/gallery/kazbek1.jpg' %}"  alt="" /></a>
+                        </li>
+                        <li class="item block cat3 cat4 col-xs-3">
+			                <a href="#" ><img src="{% static 'images/gallery/kazbek3.jpg' %}"  alt="" /></a>
+                        </li>
+                        <li class="item block cat1 cat4 col-xs-3">
+			                <a href="#" ><img src="{% static 'images/gallery/kazbek2.jpg' %}"  alt="" /></a>
+                        </li>
+                        <li class="item block cat1 cat4 col-xs-3">
+			                <a><img src="{% static 'images/gallery/elbrus4.jpg' %}"  alt="" /></a>
+                        </li>
+	                </ul>         
+     </section>
+      <br>
+            <!--SECTION TOP PRODUCTS-->
+     <section class="top-product top-product-news">
+        
+           <div class="container">
+           <div class="col-xs-12 col-md-12">
+             <h3>Top <span>Product</span><span class="point-little">.</span></h3>
+             <p class="subtitle ground">Я еще не придумал чем наполнить. Но это вопрос решаемый</p>
+             <ul id="product" class="bxslider">
+              <li>
+                <div class="jm-item second">
+					<div class="jm-item-wrapper">
+						<div class="jm-item-image">
+                            <img src="http://placehold.it/460x460" alt="" />
+                            <div class="jm-item-description">
+                                    <div class="jm-item-button">
+                                        <a href="details_prod.html"><i class="fa fa-chain-broken"></i></a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="product-title"><a href="details_prod.html" >ENVY <span>100L</span></a><p class="prod-ts-price">$256.00</p></div>
+                 <div class="tshirt-buy"><a href="#" class="tshirt-cart"><i class="fa fa-shopping-cart"></i>Add</a></div>
+               </li>
+              <li>
+                  <div class="jm-item second">
+					<div class="jm-item-wrapper">
+						<div class="jm-item-image">
+                            <img src="http://placehold.it/460x460" alt="" />
+                            <div class="jm-item-description">
+                                    <div class="jm-item-button">
+                                        <a href="details_prod.html"><i class="fa fa-chain-broken"></i></a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                 </div>
+                  <div class="product-title"><a href="details_prod.html" >BIRTOL <span>PRO</span></a><p class="prod-ts-price">$168.00</p></div>
+                 <div class="tshirt-buy"><a href="#" class="tshirt-cart"><i class="fa fa-shopping-cart"></i>Add</a></div>
+              </li>
+              <li>
+                  <div class="jm-item second">
+					<div class="jm-item-wrapper">
+						<div class="jm-item-image">
+                            <img src="http://placehold.it/460x460" alt="" />
+                            <div class="jm-item-description">
+                                    <div class="jm-item-button">
+                                        <a href="details_prod.html"><i class="fa fa-chain-broken"></i></a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                 </div>
+                  <div class="product-title"><a href="details_prod.html" >JUICE <span>100L</span></a><p class="prod-ts-price">$256.00</p></div>
+                 <div class="tshirt-buy"><a href="#" class="tshirt-cart"><i class="fa fa-shopping-cart"></i>Add</a></div>
+              </li>
+              <li>
+                 <div class="jm-item second">
+					<div class="jm-item-wrapper">
+						<div class="jm-item-image">
+                            <img src="http://placehold.it/460x460" alt="" />
+                            <div class="jm-item-description">
+                                    <div class="jm-item-button">
+                                        <a href="details_prod.html"><i class="fa fa-chain-broken"></i></a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="product-title"><a href="details_prod.html" >MORBEL</a><p class="prod-ts-price">$126.00</p></div>
+                 <div class="tshirt-buy"><a href="#" class="tshirt-cart"><i class="fa fa-shopping-cart"></i>Add</a></div>
+              </li>
+              <li>
+                 <div class="jm-item second">
+					<div class="jm-item-wrapper">
+						<div class="jm-item-image">
+                            <img src="http://placehold.it/460x460" alt="" />
+                            <div class="jm-item-description">
+                                    <div class="jm-item-button">
+                                        <a href="details_prod.html"><i class="fa fa-chain-broken"></i></a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="product-title"><a href="details_prod.html" >BRT <span>100L</span></a><p class="prod-ts-price">$86.00</p></div>
+                 <div class="tshirt-buy"><a href="#" class="tshirt-cart"><i class="fa fa-shopping-cart"></i>Add</a></div>
+              </li>
+              <li>
+                 <div class="jm-item second">
+					<div class="jm-item-wrapper">
+						<div class="jm-item-image">
+                            <img src="http://placehold.it/460x460" alt="" />
+                            <div class="jm-item-description">
+                                    <div class="jm-item-button">
+                                        <a href="details_prod.html"><i class="fa fa-chain-broken"></i></a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                 </div>
+                    <div class="product-title"><a href="details_prod.html" >ICE <span>500R</span></a><p class="prod-ts-price">$312.00</p></div>
+                 <div class="tshirt-buy"><a href="#" class="tshirt-cart"><i class="fa fa-shopping-cart"></i>Add</a></div>
+              </li>
+              <li>
+                 <div class="jm-item second">
+					<div class="jm-item-wrapper">
+						<div class="jm-item-image">
+                            <img src="http://placehold.it/460x460" alt="" />
+                            <div class="jm-item-description">
+                                    <div class="jm-item-button">
+                                        <a href="details_prod.html"><i class="fa fa-chain-broken"></i></a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="product-title"><a href="details_prod.html" >JUICE <span>100L</span></a><p class="prod-ts-price">$256.00</p></div>
+                 <div class="tshirt-buy"><a href="#" class="tshirt-cart"><i class="fa fa-shopping-cart"></i>Add</a></div>
+              </li>
+              <li>
+                 <div class="jm-item second">
+					<div class="jm-item-wrapper">
+						<div class="jm-item-image">
+                            <img src="http://placehold.it/460x460" alt="" />
+                            <div class="jm-item-description">
+                                    <div class="jm-item-button">
+                                        <a href="details_prod.html"><i class="fa fa-chain-broken"></i></a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="product-title"><a href="details_prod.html" >JUICE <span>100L</span></a><p class="prod-ts-price">$256.00</p></div>
+                 <div class="tshirt-buy"><a href="#" class="tshirt-cart"><i class="fa fa-shopping-cart"></i>Add</a></div>
+              </li>
+            </ul>
+           </div>
+        </div>
+     </section>
+            <!--SECTION SPONSOR-->
+     <section class="container">
+           <div class="client-sport client-sport-nomargin home-pg">
+               <div class="content-banner">
+                     <ul class="sponsor second">
+                      <li><img src="http://placehold.it/273x133" alt="" /></li>
+                      <li><img src="http://placehold.it/273x133" alt="" /></li>
+                      <li><img src="http://placehold.it/273x133" alt="" /></li>
+                      <li><img src="http://placehold.it/273x133" alt="" /></li>
+                      <li><img src="http://placehold.it/273x133" alt="" /></li>
+                      <li><img src="http://placehold.it/273x133" alt="" /></li>
+                    </ul>
+                </div>
+          </div>
+     </section>
+{% endblock %}
+{% if messages %}
+        {% for message in messages %}
+            <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}

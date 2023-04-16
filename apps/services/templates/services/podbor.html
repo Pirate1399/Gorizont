@@ -1,0 +1,73 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+   <section class="drawer">
+            <div class="col-md-12 size-img back-img-single">
+                <div class="effect-cover">
+                    <h3 class="txt-advert animated">Начинай свой путь</h3>
+                    <p class="txt-advert-sub">Только с лучшей экипировкой</p>
+                </div>
+           </div>
+
+    <section id="shop" class="container secondary-page">
+      <div class="general general-results">
+
+           <div class="top-score-title col-md-9">
+                <h3>Что такое подбор снаряжения?</h3>
+               <div class="col-md-12 content-zoom" >
+                  <div>
+                    <p class="desc-prod"><img src="{% static 'images/services/podbor.jpg' %}" align="right" width="350" height="230">
+                        Правильно одеться в поход намного важнее, чем в условиях цивилизации.
+                        Промокнув в городе, вы сядете в автобус до дома, забежите в кафе или ближайший
+                        торговый центр, где быстро согреетесь и обсохнете. А в дикой природе останетесь
+                        один на один с холодом, дождём и леденящим ветром.
+                        Поэтому в любой сезон обязательно продумайте список походной одежды: от куртки до носков.
+                    Кроме того, не стоит забывать про рюкзак. Неправильно подобранный или собранный рюкзак может стать
+                        большой головной болью. Для того чтобы избежать траты лишнего времени и сил, чем читать заумные статьи
+                     в интернете, мы предлагаем Вам собраться в поход под присмотром профессионала. </p>
+                      <p>Наш инструктор сможет пойти вместе с вами в магазины, посоветовать экипировку исходя из ваших целей
+                      и вашего бюджета, дать консультацию относительно Ваших покупок</p>
+                      <br>
+				  </div>
+               </div>
+<br>
+
+                <div class="col-md-12 content-more-det">
+                  <h3>Подробная информация:</h3>
+                  <div class="bulleted_list" align="left">
+                    <ul>
+                        <li><b>Консультация по подбору экипировки (с выездом): 1500 руб/час</b></li>
+                        <li><b>Помощь в выборе рюкзака: 1000 рублей.</b></li>
+                        <li><b>Помощь в укладке снаряжения в рюкзак (с обучением): 1000 рублей.</b></li>
+                        <li><b>Полный подбор снаряжения и экипировки с учетом антропометрии: 4000 руб.</b></li>
+                    </ul>
+                    </div>
+                </div>
+           </div><!--Close Top Match-->
+          <div class="col-md-3 right-column">
+           <div class="top-score-title prod-cat col-md-12">
+                <h3>Наши услуги</h3>
+                <div class="products-content">
+                    <a href="{% url 'services:prokat' %}" class="news-title-right">Прокат снаряжения</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'services:transfer' %}" class="news-title-right">Трансфер</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'services:podbor'  %}" class="news-title-right">Подбор Снаряжения</a>
+                </div>
+               <div class="products-content">
+                    <a href="{% url 'services:hostel' %}" class="news-title-right">Хостел</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'services:sertificate' %}" class="news-title-right">Сертификаты</a>
+                </div>
+          </div>
+
+         </div>
+         </section>
+         <br>
+
+{% endblock %}

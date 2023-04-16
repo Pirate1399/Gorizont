@@ -1,0 +1,262 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Горизонт: Активный отдых</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+<meta name="author" content="Corsini Alessio" />
+<meta name="keywords" content="Tennis, club, events, football, golf, non-profit, betting assistant, football,fitness, tennis, sport, soccer, goal, sports, volleyball, basketball,	charity, club, cricket, football, hockey, magazine, non profit, rugby, soccer, sport, sports, tennis" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,700,600,300' rel='stylesheet' type='text/css'/>
+    <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'/>-->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,300,200,500,600,700,800,900' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+    <link href="{% static 'css/fonts/font-awesome-4.1.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+    <!--Clients-->
+    <link href="{% static 'css/own/owl.carousel.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/own/owl.theme.css' %}" rel="stylesheet" type="text/css" />
+
+
+    <link href="{% static 'css/jquery.bxslider.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/jquery.jscrollpane.css' %}" rel="stylesheet" type="text/css" />
+
+    <link href="{% static 'css/minislide/flexslider.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/component.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/style_dir.css' %}" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}" />
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<!--SECTION TOP LOGIN-->
+     <section class="content-top-login">
+           <div class="container">
+      <div class="col-md-12">
+           <div class="box-support">
+              <a href="mailto:gorizont-tour@yandex.ru" ><p class="support-info"><i class="fa fa-envelope-o"></a></i>gorizont-tour@yandex.ru</p>
+          </div>
+           <div class="box-login">
+               <div class="header_phone_1"><a href="tel:83952724807"><b>+7 (3952) 72-48-07</b></a></div>
+          </div>
+
+        </div>
+      </div>
+     </section>
+      <!--SECTION MENU -->
+     <section class="container box-logo">
+        <header>
+           <div class="content-logo col-md-12">
+          <a class="logo" href="{% url 'home:index' %}" >
+              <img src="{% static 'img/logo3.png' %}" alt=""/>
+          </a>
+
+          <div class="bt-menu"><a href="#" class="menu"><span>&equiv;</span> Menu</a></div>
+
+         <div class="box-menu">
+
+            <nav id="cbp-hrmenu" class="cbp-hrmenu">
+					    <ul id="menu">
+                            <li><a class="lnk-menu" href="{% url 'home:index' %}">Главная</a></li>
+                            <li><a class="lnk-menu" href="#">Туры/походы</a>
+                                <div class="cbp-hrsub sub-little">
+                                  <div class="cbp-hrsub-inner">
+                                      <div class="content-sub-menu">
+								        <ul class="menu-pages">
+									        <li><a href="{% url 'tours:tours' %}"><span>Все туры</span></a></li>
+									        <li><a href="{% url 'tours:calendar' %}"><span>Календарь туров</span></a></li>
+									        <li><a href="{% url 'tours:tour_sort_type' 'Всесезонный' %}"><span>Всесезонные туры</span></a></li>
+                                            <li><a href="{% url 'tours:tour_sort_type' 'Летний' %}"><span>Летние туры</span></a></li>
+									        <li><a href="{% url 'tours:tour_sort_type' 'Зимний' %}"><span>Зимние туры</span></a></li>
+									        <li><a href="{% url 'tours:tour_sort_location' 'm' %}"><span>Местные туры</span></a></li>
+                                            <li><a href="{% url 'tours:tour_sort_location' 'rf' %}"><span>Туры по России</span></a></li>
+                                            <li><a href="{% url 'tours:tour_sort_location' 'zg' %}"><span>Заграничные туры</span></a></li>
+                                            <li><a href="{% url 'tours:progor' %}"><span>Можно с детьми</span></a></li>
+                                            <li><a href="{% url 'tours:excursions' %}">Городские экскурсии</a></li>
+                                            <li><a href="gallery_col.html">Photo Gallery</a></li>
+								          </ul>
+                                        </div>
+                                    </div>
+                                </div>
+							</li>
+						    <li><a class="lnk-menu" href="{% url 'tours:progor' %}">ProГорики</a></li>
+                            <li><a class="lnk-menu" href="#">Услуги</a>
+                                <div class="cbp-hrsub sub-little">
+                                  <div class="cbp-hrsub-inner">
+                                      <div class="content-sub-menu">
+								        <ul class="menu-pages">
+									        <li><a href="{% url 'services:prokat' %}"><span>Прокат снаряжения</span></a></li>
+									        <li><a href="{% url 'services:hostel' %}"><span>Хостел</span></a></li>
+                                            <li><a href="{% url 'services:transfer' %}"><span>Трансфер</span></a></li>
+									        <li><a href="#"><span>Возможно что-то ещё</span></a></li>
+									        <li><a href="{% url 'services:sertificate' %}"><span>Подарочный сертификат</span></a></li>
+                                            <li><a href="{% url 'services:podbor' %}"><span>Подбор снаряжения</span></a></li>
+								          </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+						    <li><a class="lnk-menu" href="{% url 'about_as:about' %}">О нас</a></li>
+                            <li><a class="lnk-menu" href="{% url 'shop:shop' %}">Магазин</a></li>
+                            <li><a class="lnk-menu" href="{% url 'contacts:contacts' %}">Контакты</a></li>
+					    </ul>
+				</nav>
+              </div>
+			</div>
+	    </header>
+     </section>
+
+        {% block content %}
+
+        {% endblock %}
+            <section id="footer-tag">
+           <div class="container">
+             <div class="col-md-12">
+              <div class="col-md-3">
+                 <h3>О нас</h3>
+                 <p>Спасибо, что посетили наш сайт. Наша миссия состоит в том, чтобы предоставить
+                     Вам эмоции, чтобы помочь любому любителю активного отдыха,
+                     который любит трепетать, покорять и наслаждаться.</p>
+                 <p>Мы готовы оказать Вам любую помощь и поддержку, а также открыть для Вас новые миры, новые вершины и новые Горизонты!</p>
+              </div>
+              <div class="col-md-3 cat-footer">
+                <div class="footer-map"></div>
+                <h3 class='last-cat'>Навигация</h3>
+                <ul class="last-tips">
+                  <li><a href="{% url 'tours:tours' %}">Наши туры</a></li>
+                  <li><a href="{% url 'tours:progor' %}">Pro_горики</a></li>
+                  <li><a href="matches.html">Услуги</a></li>
+                  <li><a href="{% url 'about_as:about' %}">О нас</a></li>
+                  <li><a href="{% url 'shop:shop' %}">Магазин</a></li>
+                  <li><a href="{% url 'contacts:contacts' %}">Контакты</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                 <h3>Наши награды</h3>
+                 <ul class="footer-last-news">
+                    <li><img src="http://placehold.it/320x213" alt="" /><p>Самые пресамые ввц вц вц вц вц вцвцвцвцвцвцвцацп</p></li>
+                    <li><img src="http://placehold.it/320x213" alt="" /><p>Fusce risus metus, placerat in consectetur eu...</p></li>
+                    <li><img src="http://placehold.it/320x213" alt="" /><p>Fusce risus metus, placerat in consectetur eu...</p></li>
+                 </ul>
+              </div>
+              <div class="col-md-3 footer-newsletters">
+                <h3>Заказать звонок</h3>
+                <form method="post" action="#">
+                    {% csrf_token %}
+                    <div class="name">
+                        <label for="name">* Ваше имя:</label><div class="clear"></div>
+                        <input id="name" name="name" type="text" placeholder="Например: Алексей" required=""/>
+                    </div>
+                    <div class="email">
+                        <label for="telephone">* Телефон:</label><div class="clear"></div>
+                        <input id="telephone" name="telephone" type="text" placeholder="Например: 89876543210" required=""/>
+                    </div>
+                    <div id="loader">
+                                <input type="submit" value="Отправить заявку"/>
+                        </div>
+
+                </form>
+              </div>
+              <div class="col-xs-12">
+                <ul class="social">
+                      <li><a href="https://www.facebook.com/progory38"target="_blank"><i class="fa fa-facebook"></i></a></li>
+<!--                      <li><a href=""><i class="fa fa-twitter"></i></a></li>-->
+<!--                      <li><a href=""><i class="fa fa-linkedin"></i></a></li>-->
+                      <li><a href="https://www.instagram.com/pro_gory38/"target="_blank"><i class="fa fa-digg"></i></a></li>
+                      <li><a href="https://vk.com/progory"target="_blank"><i class="fa fa-vk"></i></a></li>
+                      <li><a href="https://t.me/pro_gory38"target="_blank" title="Наш телеграм канал"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
+<!--                      <li><a href=""><i class="fa fa-tumblr"></i></a></li>-->
+
+                    </ul>
+              </div>
+             </div>
+           </div>
+    </section>
+    <footer>
+           <div class="col-md-12 content-footer">
+		<p>© 2013 - 2023 gorizontour.ru </p>
+      </div>
+	</footer>
+
+
+
+<script src="{% static 'js/jquery-1.10.2.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/jquery.transit.min.js' %}" type="text/javascript"></script>
+
+<!--MENU-->
+<script src="{% static 'js/menu/modernizr.custom.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/menu/cbpHorizontalMenu.js' %}" type="text/javascript"></script>
+<!--END MENU-->
+
+<!--Mini Flexslide-->
+<script src="{% static 'js/minislide/jquery.flexslider.js' %}" type="text/javascript"></script>
+
+<!-- Percentace circolar -->
+<script src="{% static 'js/circle/jquery-asPieProgress.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/circle/rainbow.min.js' %}" type="text/javascript"></script>
+
+<!--Gallery-->
+<script src="{% static 'js/gallery/jquery.prettyPhoto.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/gallery/isotope.js' %}" type="text/javascript"></script>
+
+<!-- Button Anchor Top-->
+<script src="{% static 'js/jquery.ui.totop.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/custom.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/jquery.bxslider.js' %}" type="text/javascript"></script>
+
+<!--Carousel News-->
+<script src="{% static 'js/jquery.easing.1.3.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/jquery.mousewheel.js' %}" type="text/javascript"></script>
+
+<!--Carousel Clients-->
+<script src="{% static 'js/own/owl.carousel.js' %}" type="text/javascript"></script>
+
+<!--Count down-->
+<script src="{% static 'js/jquery.countdown.js' %}" type="text/javascript"></script>
+
+<script src="{% static 'js/custom_ini.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/jquery.imageLens.js' %}" type="text/javascript"></script>
+<script type="{% static 'text/javascript' %}" language="javascript">
+    $(function () {
+        "use strict";
+        $("#img_01").imageLens({ lensSize: 200, borderSize: 2, borderColor: "#eee"});
+    });
+	</script>
+<script src="{% static 'js/jquery.ui.totop.js' %}" type="text/javascript"></script>
+
+<script src="{% static 'js/jquery.accordion.js' %}" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+                "use strict";
+                $('.accordion').accordion({ defaultOpen: 'section1' }); //some_id section1 in demo
+            });
+        });
+    </script>
+
+<script>
+    $(function () {
+        "use strict";
+        $('.skillbar-pp').each(function () {
+            $(this).find('.skillbar-bar-pp').width(0);
+        });
+
+        $('.skillbar-pp').each(function () {
+            $(this).find('.skillbar-bar-pp').animate({
+                width: $(this).attr('data-percent')
+            }, 2000);
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+   <section class="drawer">
+            <div class="col-md-12 size-img back-img-transfer">
+              <div class="effect-cover">
+                    <h3 class="txt-advert animated">Путешествуй с комфортом</h3>
+                    <p class="txt-advert-sub"> </p>
+                </div>
+           </div>
+
+    <section id="shop" class="container secondary-page">
+      <div class="general general-results">
+
+           <div class="top-score-title col-md-9">
+                <h3>Что мы предлагаем:</h3>
+               <div class="col-md-12 content-zoom" >
+                  <div>
+                    <p class="desc-prod"><img src="{% static 'images/services/avtobus.jpg' %}" align="right" width="350" height="230">
+                        Мы сотрудничаем с лучшими перевозчиками города Иркутска!  Если Вам нужно организовать трансфер - мы
+                    с радостью Вам поможем. Неважно сколько Вас человек и какие вы ставите цели - нам все по плечу! и т.д.д.д.
+                    сейчас я тут накидаю какой-нибудь текст, просто чтобы страничка не смотрелась совсем уж куцой.
+                        Вашему вниманию предлагается отрывок из рассказа Чехова "Лошадиная фамилия":</p>
+                    <p>— Вспомнил? — спросил генерал.
+— Никак нет, ваше превосходительство.
+— Может быть, Конявский? Лошадников? Нет?
+И в доме, все наперерыв, стали изобретать фамилии. Перебрали все возрасты, полы и породы лошадей, вспомнили гриву, копыта, сбрую... В доме, в саду, в людской и кухне люди ходили из угла в угол и, почесывая лбы, искали фамилию...
+Приказчика то и дело требовали в дом.
+— Табунов? — спрашивали у него. — Копытин? Жеребовский?
+— Никак нет, — отвечал Иван Евсеич и, подняв вверх глаза, продолжал думать вслух. — Коненко... Конченко... Жеребеев... Кобылеев...
+— Папа! — кричали из детской. — Тройкин! Уздечкин!
+Взбудоражилась вся усадьба. Нетерпеливый, замученный генерал пообещал дать пять рублей тому, кто вспомнит настоящую фамилию, и за Иваном Евсеичем стали ходить целыми толпами...
+— Гнедов! — говорили ему. — Рысистый! Лошадицкий!
+Но наступил вечер, а фамилия всё еще не была найдена. Так и спать легли, не послав телеграммы.</p>
+
+                      <br>
+				  </div>
+               </div>
+<br>
+
+                <div class="col-md-12 content-more-det">
+                  <h3>Цены и виды транспорта</h3>
+                  <div class="bulleted_list" align="left">
+                    <ul>
+                        <li><b>Автобус 35 мест: 2000 р/час</b></li>
+                        <li><b>Автобус 45 мест: 2500 р/час</b></li>
+                        <li><b>Микроавтобус 11 мест: 2000 р/час</b></li>
+                        <li><b>Автомобиль 4 места: 1500 р/час</b></li>
+                    </ul>
+                    </div>
+                </div>
+           </div><!--Close Top Match-->
+          <div class="col-md-3 right-column">
+           <div class="top-score-title prod-cat col-md-12">
+                <h3>Наши услуги</h3>
+                <div class="products-content">
+                    <a href="{% url 'services:prokat' %}" class="news-title-right">Прокат снаряжения</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'services:transfer' %}" class="news-title-right">Трансфер</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'services:podbor'  %}" class="news-title-right">Подбор Снаряжения</a>
+                </div>
+               <div class="products-content">
+                    <a href="{% url 'services:hostel' %}" class="news-title-right">Хостел</a>
+                </div>
+                <div class="products-content">
+                    <a href="{% url 'services:sertificate' %}" class="news-title-right">Сертификаты</a>
+                </div>
+          </div>
+
+         </div>
+         </section>
+         <br>
+
+{% endblock %}

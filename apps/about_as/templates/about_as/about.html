@@ -1,0 +1,71 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="drawer">
+        <div class="col-md-12 size-img back-img-match">
+            <div class="effect-cover">
+                <h3 class="txt-advert animated">К новым горизонтам</h3>
+                <p class="txt-advert-sub">Мы делаем горы ближе</p>
+            </div>
+        </div>
+     
+    <section id="players" class="container secondary-page">
+      <div class="general general-results players">
+              
+           <div class="top-score-title right-score col-md-9">
+                <h3>Команда <span>Горизонта</span></h3>
+                <p class="txt-right">Наша команда – это опытные специалисты, хорошо разбирающиеся во всех задачах,
+                    которые ложатся на их плечи, и умеющие находить выход из любых,
+                    даже самых сложных ситуаций. </p>
+                <p class="txt-right txt-dd-second">Высокий уровень профессионализма позволяет нам не просто качественно
+                    выполнять свою работу, но добиваться именно того, чего ждут от нас клиенты.
+                    Мы действительно любим то дело, которым занимаемся, и нам радостно работать в группе,
+                    где чувствуется взаимоподдержка и уважение, а каждый ее представитель заинтересован в конечном результате.</p>
+               {% for people in people %}
+               <div class="col-md-3 atp-player">
+                  <a href="{% url 'about_as:single' people.id %}"><img src="{{people.title_foto_148x198.url}}" alt="" />
+                  <p>{{people.name}}</p></a>
+                   <div> <b>{{people.job}}</b></div>
+                </div>
+               {% endfor %}
+               <div class="content-wtp-player">
+
+                <h3>История <span>Горизонта</span></h3>
+                <p class="txt-right">Наша команда – это опытные специалисты, хорошо разбирающиеся во всех задачах,
+                    которые ложатся на их плечи, и умеющие находить выход из любых,
+                    даже самых сложных ситуаций. </p>
+                <p class="txt-right txt-dd-second">Высокий уровень профессионализма позволяет нам не просто качественно
+                    выполнять свою работу, но добиваться именно того, чего ждут от нас клиенты.
+                    Мы действительно любим то дело, которым занимаемся, и нам радостно работать в группе,
+                    где чувствуется взаимоподдержка и уважение, а каждый ее представитель заинтересован в конечном результате.</p>
+               </div>
+
+
+
+           </div><!--Close Top Match-->
+           <div class="col-md-3 right-column">
+           <div class="top-score-title col-md-12 right-title">
+                <h3>Наши проекты</h3>
+                <div class="right-content">
+                    <p class="news-title-right">Pro_goriki</p>
+                    <p class="txt-right">Хочетсся в горы, но не знаете с кем оставить детей? Берите их с собой! Мы вам в этом поможем</p>
+                    <a href="{% url 'tours:progor' %}" class="ca-more"><i class="fa fa-angle-double-right"></i>Узнать...</a>
+                </div>
+                <div class="right-content">
+                    <p class="news-title-right">Хостел ШИКША</p>
+                    <p class="txt-right">Уютный хостел в самом центре Иркутска</p>
+                    <a href="{% url 'services:hostel' %}" class="ca-more"><i class="fa fa-angle-double-right"></i>Узнать...</a>
+                </div>
+                <div class="right-content">
+                    <p class="news-title-right">Да собсна что угодно</p>
+                    <p class="txt-right">Любую информацию о любой херобурде</p>
+                    <a href="#" class="ca-more"><i class="fa fa-angle-double-right"></i>Узнать...</a>
+                </div>
+          </div>
+          <div class="top-score-title col-md-12">
+            <a href="#" title="Узнай больше!"> <img src="{% static 'images/about/DED.jpg' %}" alt="" /></a>
+          </div>
+
+       </section>
+ {% endblock %}

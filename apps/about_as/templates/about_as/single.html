@@ -1,0 +1,110 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="drawer">
+    <div class="col-md-12 size-img back-img-match">
+        <div class="effect-cover">
+                <h3 class="txt-advert animated">Мы в лицах</h3>
+                <p class="txt-advert-sub">Лучшая команда для лучших клиентов</p>
+            </div>
+    </div>
+    
+    <section id="single_player" class="container secondary-page">
+      <div class="general general-results players">
+           <div class="top-score-title right-score col-md-9">
+                <h3>{{people.name}}</h3>
+                <div class="col-md-12 atp-single-player">
+                  <img class="img-djoko" src="{{people.foto_100x134.url}}" width="200" height="250" alt="" />
+                  <div class="col-md-2 data-player">
+                     <p>Birthdate:</p>
+                     <p>Должность:</p>
+                     <p>Height:</p>
+                     <p>Weight:</p>
+                     <p>Plays:</p>
+                     <p>Turned Pro:</p>
+                     <p>VK:</p>
+                  </div>
+                  <div class="col-md-3 data-player-2">
+                     <p>May 22, 1987</p>
+                     <p>{{people.job}}</p>
+                     <p>6' 2" (188 cm)</p>
+                     <p>176 lb (80 kg)</p>
+                     <p>Right-handed</p>
+                     <p>12 years on tour</p>
+                      <p><a href="{{people.vk}}" target="_blank">{{people.vk}}</a></p>
+                  </div>
+                  <div class="col-md-2 rank-player">
+                     <div class="content-rank"><p class="rank-data">7</p></div>
+                     <p class="rank-title">Покоренных вершин</p>
+                  </div>
+                </div>
+                <div class="col-md-12 atp-single-player skill-content">
+                     <div class="exp-skill">
+                            <p class="exp-title-pp">Уникальные навыки</p>
+                                <div class="skills-pp">
+                                    <div class="skillbar-pp clearfix" data-percent="{{people.skill_1.1}}%">
+                                        <div class="skillbar-title-pp"><span>{{people.skill_1.0}}</span></div>
+                                        <div class="skillbar-bar-pp" style="width: {{people.skill_1.1}}%;"></div>
+                                        <div class="skill-bar-percent-pp">{{people.skill_1.1}}%</div>
+                                </div>
+                            <div class="skillbar-pp clearfix" data-percent="{{people.skill_2.0}}%">
+                                <div class="skillbar-title-pp"><span>{{people.skill_2.0}}</span></div>
+                                <div class="skillbar-bar-pp" style="width: {{people.skill_2.1}}%;"></div>
+                                <div class="skill-bar-percent-pp">{{people.skill_2.1}}%</div>
+                            </div>
+                            <div class="skillbar-pp clearfix" data-percent="{{people.skill_3.1}}%">
+                                <div class="skillbar-title-pp"><span>{{people.skill_3.0}}</span></div>
+                                <div class="skillbar-bar-pp" style="width: {{people.skill_3.1}}%;"></div>
+                                <div class="skill-bar-percent-pp">{{people.skill_3.1}}%</div>
+                            </div>
+                            <div class="skillbar-pp clearfix" data-percent="{{people.skill_4.1}}%">
+                                <div class="skillbar-title-pp"><span>{{people.skill_4.0}}</span></div>
+                                <div class="skillbar-bar-pp" style="width: {{people.skill_4.1}}%;"></div>
+                                <div class="skill-bar-percent-pp">{{people.skill_4.1}}%</div>
+                            </div>
+                        </div>
+                    </div>
+             </div>
+               <div class="col-md-12 atp-single-player skill-content">
+                      <div class="ppl-desc">
+                        <p class="exp-title-pp">Информация</p>
+                        <p>{{people.description}}</p>
+                    </div>
+              </div>
+           </div><!--Close Top Match-->
+
+           <!--Right Column-->
+           <div class="col-md-3 right-column">
+           <div class="top-score-title col-md-12 right-title">
+                <h3>Наши проекты</h3>
+                <div class="right-content">
+                    <p class="news-title-right">Pro_goriki</p>
+                    <p class="txt-right">Хочетсся в горы, но не знаете с кем оставить детей? Берите их с собой! Мы вам в этом поможем</p>
+                    <a href="{% url 'tours:progor' %}" class="ca-more"><i class="fa fa-angle-double-right"></i>Узнать...</a>
+                </div>
+                <div class="right-content">
+                    <p class="news-title-right">Хостел ШИКША</p>
+                    <p class="txt-right">Уютный хостел в самом центре Иркутска</p>
+                    <a href="{% url 'services:hostel' %}" class="ca-more"><i class="fa fa-angle-double-right"></i>Узнать...</a>
+                </div>
+                <div class="right-content">
+                    <p class="news-title-right">Да собсна что угодно</p>
+                    <p class="txt-right">Любую информацию о любой херобурде</p>
+                    <a href="#" class="ca-more"><i class="fa fa-angle-double-right"></i>Узнать...</a>
+                </div>
+          </div>
+          <div class="top-score-title col-md-12">
+            <a href="#" title="Узнай больше!"> <img src="{% static 'images/about/DED.jpg' %}" alt="" /></a>
+          </div>
+
+          </div>
+         </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+{% endblock %}

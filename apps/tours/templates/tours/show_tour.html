@@ -1,0 +1,43 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+<section>
+	<div class="container">
+		<div class="card border-0">
+			<div class="row no-gutters">
+				<aside class="col-md-5">
+					<article class="gallery-wrap">
+						<div class="img-big-wrap">
+							<a><img src="{{tour.title_foto.url}}" width="750" height="300"></a>
+						</div>
+					</article>
+				</aside>
+				<form action="/cart_items" method="post" data-product-id="228370992" class="col-md-7 without-old-price without-sku is-available">
+					<article class="content-body pt-0">
+                        <h1 class="title h2 mt-0"><b>{{tour.name}}</b></h1>
+						<div class="h4 mb-1">
+                            <p class="price h4"><b>Стоимость:</b> {{tour.price}} рублей</p>
+                            <p ><b>Сложность:</b> {{tour.level}} </p>
+                            <p ><b>Тип тура:</b> {{tour.type}} </p>
+						</div>
+    </section>
+<section id="video" class="container secondary-page">
+      <div class="general general-results">
+           <div class="video-desc">
+                <h3>{{tour.name}}</h3>
+                <div class="video-arg">
+                    {% for i in tour.text %}
+                    <p class="video-arg"> {{i}} </p>
+                    {% endfor %}
+                    <p class="txt-training"><a href="{{tour.file}}" download="">Скачать программу тура</a></p>
+                    <br>
+                </div>
+
+         </section>
+
+<spacer hight="50"></spacer>
+
+
+
+{% endblock %}

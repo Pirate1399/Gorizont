@@ -1,0 +1,301 @@
+﻿{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <section class="drawer">
+    <div class="col-md-12 size-img back-img">
+        <div class="effect-cover">
+        <h3 class="txt-advert animated">Календарь</h3>
+        <p class="txt-advert-sub animated">Текущие дата и время в Иркутске: {{today}}</p>
+        </div>
+    </div>
+    <section id="summary" class="container secondary-page">
+      <div class="general general-results tournaments">
+           
+           <div id="c-calend" class="top-score-title right-score col-md-9">
+                <h3>{{year}} <span>Календарь</span></h3>
+                <p class="txt-right">Здусь вы можете посмотреть расписание всех запланированных туров, походов и экскурсий на текущий год. </p>
+                <p class="txt-right txt-dd-second">Информацию о количестве мест, скидках, акциях, а также обо всем, что вас интересует Вы можете получить у адмистратора Тани белой.
+                    Ой ё-и-ё. Но она скажет Вам, что нужно уточнить У СС. А через пару часов перезвонит. И на ваш очередной вопрос опять скажет что нужно уточнить. А
+                    потом уже перезвонит и вы получите всю инфу. Однако, так было раньше, возможно, вполне вероятно, что и сразу все расскажет.
+                    Короче позвоните.</p>
+                <div class="accordion" id="section1"><i class="fa fa-calendar-o"></i>Январь<span></span></div>
+                    <div class="acc-content">
+                            <div class="col-md-2 acc-title">Начало</div>
+                            <div class="col-md-2 acc-title">Окончание</div>
+                            <div class="col-md-3 acc-title">Маршрут</div>
+                            <div class="col-md-3 acc-title">Сложность</div>
+                            <div class="col-md-2 acc-title">Цена</div>
+                            {% if 1month %}
+                            {% for list in 1month %}
+                            <div class="col-md-2 t1"><p>{{list.0.start_date.day}}.0{{list.0.start_date.month}}.{{list.0.start_date.year}}</p></div>
+                            <div class="col-md-2 t1"><p>{{list.0.finish_date.day}}.0{{list.0.finish_date.month}}.{{list.0.finish_date.year}}</p></div>
+                            <div class="col-md-3 t2"><p><a href="{% url 'tours:show_tour' list.1.name %}">{{list.1.name}}</a></p> </div>
+                            <div class="col-md-3 t3"><p>{{list.1.level}}</p></div>
+                            <div class="col-md-2 t4"><p>{{list.1.price}}<br />с человека</p></div>
+                            <div class="acc-footer"></div>
+                            {% endfor %}
+                            {% else %}
+                            <div>На этот месяц даты походов ещё не назначены</div>
+                            <p>Мы еще в раздумьях куда и когда пойти....</p>
+                            {% endif %}
+
+                    </div>
+                    <div class="accordion" id="section2"><i class="fa fa-calendar-o"></i>Февраль<span></span></div>
+                    <div class="acc-content">
+                           <div class="col-md-2 acc-title">Начало</div>
+                            <div class="col-md-2 acc-title">Окончание</div>
+                            <div class="col-md-3 acc-title">Маршрут</div>
+                            <div class="col-md-3 acc-title">Сложность</div>
+                            <div class="col-md-2 acc-title">Цена</div>
+                            {% if 2month %}
+                            {% for list in 2month %}
+                            <div class="col-md-2 t1"><p>{{list.0.start_date.day}}.0{{list.0.start_date.month}}.{{list.0.start_date.year}}</p></div>
+                            <div class="col-md-2 t1"><p>{{list.0.finish_date.day}}.0{{list.0.finish_date.month}}.{{list.0.finish_date.year}}</p></div>
+                            <div class="col-md-3 t2"><p><a href="{% url 'tours:show_tour' list.1.name %}">{{list.1.name}}</a></p> </div>
+                            <div class="col-md-3 t3"><p>{{list.1.level}}</p></div>
+                            <div class="col-md-2 t4"><p>{{list.1.price}}<br />с человека</p></div>
+                            <div class="acc-footer"></div>
+                            {% endfor %}
+                            {% else %}
+                            <div>На этот месяц даты походов ещё не назначены</div>
+                            <p>Мы еще в раздумьях куда и когда пойти....</p>
+                            {% endif %}
+                    </div>
+                    <div class="accordion" id="section3"><i class="fa fa-calendar-o"></i>Март<span></span></div>
+                    <div class="acc-content">
+                            <div class="col-md-2 acc-title">Начало</div>
+                            <div class="col-md-2 acc-title">Окончание</div>
+                            <div class="col-md-3 acc-title">Маршрут</div>
+                            <div class="col-md-3 acc-title">Сложность</div>
+                            <div class="col-md-2 acc-title">Цена</div>
+
+                           {% if 3month %}
+                            {% for list in 3month %}
+                            <div class="col-md-2 t1"><p>{{list.0.start_date.day}}.0{{list.0.start_date.month}}.{{list.0.start_date.year}}</p></div>
+                            <div class="col-md-2 t1"><p>{{list.0.finish_date.day}}.0{{list.0.finish_date.month}}.{{list.0.finish_date.year}}</p></div>
+                            <div class="col-md-3 t2"><p><a href="{% url 'tours:show_tour' list.1.name %}">{{list.1.name}}</a></p> </div>
+                            <div class="col-md-3 t3"><p>{{list.1.level}}</p></div>
+                            <div class="col-md-2 t4"><p>{{list.1.price}}<br />с человека</p></div>
+                            <div class="acc-footer"></div>
+                            {% endfor %}
+                            {% else %}
+                            <div>На этот месяц даты походов ещё не назначены</div>
+                            <p>Мы еще в раздумьях куда и когда пойти....</p>
+                            {% endif %}
+                    </div>
+                    <div class="accordion" id="section4"><i class="fa fa-calendar-o"></i>Апрель<span></span></div>
+                    <div class="acc-content">
+                            <div class="col-md-2 acc-title">Начало</div>
+                            <div class="col-md-2 acc-title">Окончание</div>
+                            <div class="col-md-3 acc-title">Маршрут</div>
+                            <div class="col-md-3 acc-title">Сложность</div>
+                            <div class="col-md-2 acc-title">Цена</div>
+                            {% if 4month %}
+                            {% for list in 4month %}
+                            <div class="col-md-2 t1"><p>{{list.0.start_date.day}}.0{{list.0.start_date.month}}.{{list.0.start_date.year}}</p></div>
+                            <div class="col-md-2 t1"><p>{{list.0.finish_date.day}}.0{{list.0.finish_date.month}}.{{list.0.finish_date.year}}</p></div>
+                            <div class="col-md-3 t2"><p><a href="{% url 'tours:show_tour' list.1.name %}">{{list.1.name}}</a></p> </div>
+                            <div class="col-md-3 t3"><p>{{list.1.level}}</p></div>
+                            <div class="col-md-2 t4"><p>{{list.1.price}}<br />с человека</p></div>
+                            <div class="acc-footer"></div>
+                            {% endfor %}
+                            {% else %}
+                            <div>На этот месяц даты походов ещё не назначены</div>
+                            <p>Мы еще в раздумьях куда и когда пойти....</p>
+                            {% endif %}
+                    </div>
+                    <div class="accordion" id="section5"><i class="fa fa-calendar-o"></i>Май<span></span></div>
+                    <div class="acc-content">
+                            <div class="col-md-2 acc-title">Начало</div>
+                            <div class="col-md-2 acc-title">Окончание</div>
+                            <div class="col-md-3 acc-title">Маршрут</div>
+                            <div class="col-md-3 acc-title">Сложность</div>
+                            <div class="col-md-2 acc-title">Цена</div>
+                            {% if 5month %}
+                            {% for list in 5month %}
+                            <div class="col-md-2 t1"><p>{{list.0.start_date.day}}.0{{list.0.start_date.month}}.{{list.0.start_date.year}}</p></div>
+                            <div class="col-md-2 t1"><p>{{list.0.finish_date.day}}.0{{list.0.finish_date.month}}.{{list.0.finish_date.year}}</p></div>
+                            <div class="col-md-3 t2"><p><a href="{% url 'tours:show_tour' list.1.name %}">{{list.1.name}}</a></p> </div>
+                            <div class="col-md-3 t3"><p>{{list.1.level}}</p></div>
+                            <div class="col-md-2 t4"><p>{{list.1.price}}<br />с человека</p></div>
+                            <div class="acc-footer"></div>
+                            {% endfor %}
+                            {% else %}
+                            <div>На этот месяц даты походов ещё не назначены</div>
+                            <p>Мы еще в раздумьях куда и когда пойти....</p>
+                            {% endif %}
+                    </div>
+                    <div class="accordion" id="section6"><i class="fa fa-calendar-o"></i>Июнь<span></span></div>
+                    <div class="acc-content">
+                            <div class="col-md-2 acc-title">Начало</div>
+                            <div class="col-md-2 acc-title">Окончание</div>
+                            <div class="col-md-3 acc-title">Маршрут</div>
+                            <div class="col-md-3 acc-title">Сложность</div>
+                            <div class="col-md-2 acc-title">Цена</div>
+                            {% if 6month %}
+                            {% for list in 6month %}
+                            <div class="col-md-2 t1"><p>{{list.0.start_date.day}}.0{{list.0.start_date.month}}.{{list.0.start_date.year}}</p></div>
+                            <div class="col-md-2 t1"><p>{{list.0.finish_date.day}}.0{{list.0.finish_date.month}}.{{list.0.finish_date.year}}</p></div>
+                            <div class="col-md-3 t2"><p><a href="{% url 'tours:show_tour' list.1.name %}">{{list.1.name}}</a></p> </div>
+                            <div class="col-md-3 t3"><p>{{list.1.level}}</p></div>
+                            <div class="col-md-2 t4"><p>{{list.1.price}}<br />с человека</p></div>
+                            <div class="acc-footer"></div>
+                            {% endfor %}
+                            {% else %}
+                            <div>На этот месяц даты походов ещё не назначены</div>
+                            <p>Мы еще в раздумьях куда и когда пойти....</p>
+                            {% endif %}
+                    </div>
+                    <div class="accordion" id="section7"><i class="fa fa-calendar-o"></i>Июль<span></span></div>
+                    <div class="acc-content">
+                            <div class="col-md-2 acc-title">Начало</div>
+                            <div class="col-md-2 acc-title">Окончание</div>
+                            <div class="col-md-3 acc-title">Маршрут</div>
+                            <div class="col-md-3 acc-title">Сложность</div>
+                            <div class="col-md-2 acc-title">Цена</div>
+                            {% if 7month %}
+                            {% for list in 7month %}
+                            <div class="col-md-2 t1"><p>{{list.0.start_date.day}}.0{{list.0.start_date.month}}.{{list.0.start_date.year}}</p></div>
+                            <div class="col-md-2 t1"><p>{{list.0.finish_date.day}}.0{{list.0.finish_date.month}}.{{list.0.finish_date.year}}</p></div>
+                            <div class="col-md-3 t2"><p><a href="{% url 'tours:show_tour' list.1.name %}">{{list.1.name}}</a></p> </div>
+                            <div class="col-md-3 t3"><p>{{list.1.level}}</p></div>
+                            <div class="col-md-2 t4"><p>{{list.1.price}}<br />с человека</p></div>
+                            <div class="acc-footer"></div>
+                            {% endfor %}
+                            {% else %}
+                            <div>На этот месяц даты походов ещё не назначены</div>
+                            <p>Мы еще в раздумьях куда и когда пойти....</p>
+                            {% endif %}
+                    </div>
+                    <div class="accordion" id="section8"><i class="fa fa-calendar-o"></i>Август<span></span></div>
+                    <div class="acc-content">
+                            <div class="col-md-2 acc-title">Начало</div>
+                            <div class="col-md-2 acc-title">Окончание</div>
+                            <div class="col-md-3 acc-title">Маршрут</div>
+                            <div class="col-md-3 acc-title">Сложность</div>
+                            <div class="col-md-2 acc-title">Цена</div>
+                            {% if 8month %}
+                            {% for list in 8month %}
+                            <div class="col-md-2 t1"><p>{{list.0.start_date.day}}.0{{list.0.start_date.month}}.{{list.0.start_date.year}}</p></div>
+                            <div class="col-md-2 t1"><p>{{list.0.finish_date.day}}.0{{list.0.finish_date.month}}.{{list.0.finish_date.year}}</p></div>
+                            <div class="col-md-3 t2"><p><a href="{% url 'tours:show_tour' list.1.name %}">{{list.1.name}}</a></p> </div>
+                            <div class="col-md-3 t3"><p>{{list.1.level}}</p></div>
+                            <div class="col-md-2 t4"><p>{{list.1.price}}<br />с человека</p></div>
+                            <div class="acc-footer"></div>
+                            {% endfor %}
+                            {% else %}
+                            <div>На этот месяц даты походов ещё не назначены</div>
+                            <p>Мы еще в раздумьях куда и когда пойти....</p>
+                            {% endif %}
+                    </div>
+                    <div class="accordion" id="section9"><i class="fa fa-calendar-o"></i>Сентябрь<span></span></div>
+                    <div class="acc-content">
+                            <div class="col-md-2 acc-title">Начало</div>
+                            <div class="col-md-2 acc-title">Окончание</div>
+                            <div class="col-md-3 acc-title">Маршрут</div>
+                            <div class="col-md-3 acc-title">Сложность</div>
+                            <div class="col-md-2 acc-title">Цена</div>
+                            {% if 9month %}
+                            {% for list in 9month %}
+                            <div class="col-md-2 t1"><p>{{list.0.start_date.day}}.0{{list.0.start_date.month}}.{{list.0.start_date.year}}</p></div>
+                            <div class="col-md-2 t1"><p>{{list.0.finish_date.day}}.0{{list.0.finish_date.month}}.{{list.0.finish_date.year}}</p></div>
+                            <div class="col-md-3 t2"><p><a href="{% url 'tours:show_tour' list.1.name %}">{{list.1.name}}</a></p> </div>
+                            <div class="col-md-3 t3"><p>{{list.1.level}}</p></div>
+                            <div class="col-md-2 t4"><p>{{list.1.price}}<br />с человека</p></div>
+                            <div class="acc-footer"></div>
+                            {% endfor %}
+                            {% else %}
+                            <div>На этот месяц даты походов ещё не назначены</div>
+                            <p>Мы еще в раздумьях куда и когда пойти....</p>
+                            {% endif %}
+                    </div>
+                    <div class="accordion" id="section10"><i class="fa fa-calendar-o"></i>Октябрь<span></span></div>
+                    <div class="acc-content">
+                            <div class="col-md-2 acc-title">Начало</div>
+                            <div class="col-md-2 acc-title">Окончание</div>
+                            <div class="col-md-3 acc-title">Маршрут</div>
+                            <div class="col-md-3 acc-title">Сложность</div>
+                            <div class="col-md-2 acc-title">Цена</div>
+                            {% if 10month %}
+                            {% for list in 10month %}
+                            <div class="col-md-2 t1"><p>{{list.0.start_date.day}}.{{list.0.start_date.month}}.{{list.0.start_date.year}}</p></div>
+                            <div class="col-md-2 t1"><p>{{list.0.finish_date.day}}.{{list.0.finish_date.month}}.{{list.0.finish_date.year}}</p></div>
+                            <div class="col-md-3 t2"><p><a href="{% url 'tours:show_tour' list.1.name %}">{{list.1.name}}</a></p> </div>
+                            <div class="col-md-3 t3"><p>{{list.1.level}}</p></div>
+                            <div class="col-md-2 t4"><p>{{list.1.price}}<br />с человека</p></div>
+                            <div class="acc-footer"></div>
+                            {% endfor %}
+                            {% else %}
+                            <div>На этот месяц даты походов ещё не назначены</div>
+                            <p>Мы еще в раздумьях куда и когда пойти....</p>
+                            {% endif %}
+                    </div>
+                    <div class="accordion" id="section11"><i class="fa fa-calendar-o"></i>Ноябрь<span></span></div>
+                    <div class="acc-content">
+                            <div class="col-md-2 acc-title">Начало</div>
+                            <div class="col-md-2 acc-title">Окончание</div>
+                            <div class="col-md-3 acc-title">Маршрут</div>
+                            <div class="col-md-3 acc-title">Сложность</div>
+                            <div class="col-md-2 acc-title">Цена</div>
+                            {% if 11month %}
+                            {% for list in 11month %}
+                            <div class="col-md-2 t1"><p>{{list.0.start_date.day}}.{{list.0.start_date.month}}.{{list.0.start_date.year}}</p></div>
+                            <div class="col-md-2 t1"><p>{{list.0.finish_date.day}}.{{list.0.finish_date.month}}.{{list.0.finish_date.year}}</p></div>
+                            <div class="col-md-3 t2"><p><a href="{% url 'tours:show_tour' list.1.name %}">{{list.1.name}}</a></p> </div>
+                            <div class="col-md-3 t3"><p>{{list.1.level}}</p></div>
+                            <div class="col-md-2 t4"><p>{{list.1.price}}<br />с человека</p></div>
+                            <div class="acc-footer"></div>
+                            {% endfor %}
+                            {% else %}
+                            <div>На этот месяц даты походов ещё не назначены</div>
+                            <p>Мы еще в раздумьях куда и когда пойти....</p>
+                            {% endif %}
+                    </div>
+                    <div class="accordion" id="section11"><i class="fa fa-calendar-o"></i>Декабрь<span></span></div>
+                    <div class="acc-content">
+                            <div class="col-md-2 acc-title">Начало</div>
+                            <div class="col-md-2 acc-title">Окончание</div>
+                            <div class="col-md-3 acc-title">Маршрут</div>
+                            <div class="col-md-3 acc-title">Сложность</div>
+                            <div class="col-md-2 acc-title">Цена</div>
+                            {% if 12month %}
+                            {% for list in 12month %}
+                            <div class="col-md-2 t1"><p>{{list.0.start_date.day}}.{{list.0.start_date.month}}.{{list.0.start_date.year}}</p></div>
+                            <div class="col-md-2 t1"><p>{{list.0.finish_date.day}}.{{list.0.finish_date.month}}.{{list.0.finish_date.year}}</p></div>
+                            <div class="col-md-3 t2"><p><a href="{% url 'tours:show_tour' list.1.name %}">{{list.1.name}}</a></p> </div>
+                            <div class="col-md-3 t3"><p>{{list.1.level}}</p></div>
+                            <div class="col-md-2 t4"><p>{{list.1.price}}<br />с человека</p></div>
+                            <div class="acc-footer"></div>
+                            {% endfor %}
+                            {% else %}
+                            <div>На этот месяц даты походов ещё не назначены</div>
+                            <p>Мы еще в раздумьях куда и когда пойти....</p>
+                            {% endif %}
+                    </div>
+
+           </div><!--Close Top Match-->
+           <div class="col-md-3 right-column">
+           <div class="top-score-title col-md-12 right-title">
+                <h3>Полезные статьи:</h3>
+                <div class="right-content">
+                    <p class="news-title-right">Трудности в походе</p>
+                    <p class="txt-right">Собираясь в поход, нужно трезво оценивать свои силы и возможности. Данная статья будет полезна начинающему туристу</p>
+                    <a href="https://videouroki.net/video/02-obektivnye-trudnosti-turistskogo-pohoda.html" class="ca-more" target="_blank"><i class="fa fa-angle-double-right"></i>Читать...</a>
+                </div>
+                <div class="right-content">
+                    <p class="news-title-right">Содержимое походной аптечки</p>
+                    <p class="txt-right">Правильно собрать аптечку - это обязательная задача перед любым походом.</p>
+                    <a href="https://gorzdrav.org/blog/pokhodnaja-aptechka-chto-dolzhno-byt-vnutri/" target="_blank" class="ca-more"><i class="fa fa-angle-double-right"></i>Читать...</a>
+                </div>
+                <div class="right-content">
+                    <p class="news-title-right">Кодекс туриста</p>
+                    <p class="txt-right">В этой статье собраны несколько простых правил из Кодекса Туриста</p>
+                    <a href="https://crimea-extrim.ru/kodeks-turista/" class="ca-more" target="_blank"><i class="fa fa-angle-double-right"></i>Читать...</a>
+                </div>
+          </div>
+
+    </section>
+
+{% endblock %}
